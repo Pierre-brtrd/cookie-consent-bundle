@@ -29,7 +29,7 @@ class CookieConsentLog
     protected ?string $cookieConsentKey = null;
 
     #[ORM\Column(length: 255)]
-    protected ?srting $cookieName = null;
+    protected ?string $cookieName = null;
 
     #[ORM\Column(length: 255)]
     protected ?string $cookieValue = null;

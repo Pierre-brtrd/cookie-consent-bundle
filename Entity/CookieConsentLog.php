@@ -10,57 +10,32 @@ declare(strict_types=1);
 namespace ConnectHolland\CookieConsentBundle\Entity;
 
 use DateTime;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="ch_cookieconsent_log")
- */
+#[ORM\Entity]
+#[ORM\Table(name: "ch_cookieconsent_log")]
 class CookieConsentLog
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     *
-     * @var int
-     */
-    protected $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: "AUTO")]
+    #[ORM\Column()]
+    protected ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @var string
-     */
-    protected $ipAddress;
+    #[ORM\Column(length: 255)]
+    protected ?string $ipAddress = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @var string
-     */
-    protected $cookieConsentKey;
+    #[ORM\Column(length: 255)]
+    protected ?string $cookieConsentKey = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @var string
-     */
-    protected $cookieName;
+    #[ORM\Column(length: 255)]
+    protected ?srting $cookieName = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @var string
-     */
-    protected $cookieValue;
+    #[ORM\Column(length: 255)]
+    protected ?string $cookieValue = null;
 
-    /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var DateTime
-     */
-    protected $timestamp;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    protected ?\DateTime $timestamp = null;
 
     public function getId(): int
     {
